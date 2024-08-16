@@ -1,0 +1,144 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the font and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Center the main title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3bccc2;
+}
+
+/* Style the search bar */
+.search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Container for the medicine cards */
+.medicine-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns in the grid */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Style each medicine card */
+.medicine-card {
+    width: 80%; /* Full width of the grid cell */
+    height: 300px; /* Fixed height for the card */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.medicine-card img {
+    width: 100%;
+    height: 200px; /* Adjusted height */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.medicine-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.medicine-card p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.medicine-card strong {
+    display: block;
+    margin-bottom: 5px;
+}
+.medicine-card button {
+    background-color: #3bccc2;
+    width: 50%;
+    text-align: center;
+    margin-left: 60px;
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+/* Hover effect for the cards */
+.medicine-card:hover {
+    transform: scale(1.05);
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: red;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
