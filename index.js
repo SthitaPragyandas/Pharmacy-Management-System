@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Simple validation logic
     if (username === "sthita23cs" && password === "23ug") {
-        alert("Login successful!");
+     
         window.location.href = "mediciene.html";
         // You can redirect to another page here
     } else {
