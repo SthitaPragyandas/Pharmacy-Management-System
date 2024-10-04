@@ -35,21 +35,24 @@
         <div class="modal-content">
             <span class="close-add-modal-btn">&times;</span>
             <h2>Add Medicine</h2>
-            <form id="medicineForm" class="form-container">
-                <div>
-                    <input type="text" id="title" placeholder="Title" required><br>
-                    <input type="text" id="manufacturers" placeholder="Manufacturers" required><br>
-                    <input type="text" id="warning" placeholder="Warning" required><br>
+            <form id="medicineForm">
+                <div class="form-container">
+                    <div>
+                        <input type="text" id="title" placeholder="Title" required><br>
+                        <input type="text" id="manufacturers" placeholder="Manufacturers" required><br>
+                        <input type="text" id="warning" placeholder="Warning" required><br>
+                    </div>
+                    <div>
+                        <input type="text" id="purpose" placeholder="Purpose" required><br>
+                        <input type="number" id="price" placeholder="Price" required><br>
+                        <input type="number" id="stock" placeholder="Stock" required><br>
+                    </div>
+
                 </div>
-                <div>
-                    <input type="text" id="purpose" placeholder="Purpose" required><br>
-                    <input type="number" id="price" placeholder="Price" required><br>
-                    <input type="number" id="stock" placeholder="Stock" required><br>
+                <div class="button-container">
+                    <button type="submit" class="add-cta">Add Medicine</button>
                 </div>
             </form>
-            <div class="button-container">
-                <button type="submit" class="add-cta">Add Medicine</button>
-            </div>
         </div>
     </div>
 
