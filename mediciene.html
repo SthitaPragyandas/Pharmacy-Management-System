@@ -16,26 +16,52 @@
       
 
     </div>
-  
-    
+
     <!-- Search Bar -->
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search by medicine name...">
     </div>
 
-    <div class="medicine-container" id="medicineContainer">
-        <!-- Dynamic medicine cards will be generated here -->
+    <!-- Add Medicines Button -->
+    <div class="cta-container">
+        <button class="add-medicine" id="openAddModalBtn">Add Medicines</button>
     </div>
 
-    <div id="medicineModal" class="modal">
+    <!-- Medicines Container -->
+    <div class="medicine-container" id="medicineContainer"></div>
+
+    <!-- Add Medicine Modal -->
+    <div id="addMedicineModal" class="modal">
+        <div class="modal-content">
+            <span class="close-add-modal-btn">&times;</span>
+            <h2>Add Medicine</h2>
+            <form id="medicineForm" class="form-container">
+                <div>
+                    <input type="text" id="title" placeholder="Title" required><br>
+                    <input type="text" id="manufacturers" placeholder="Manufacturers" required><br>
+                    <input type="text" id="warning" placeholder="Warning" required><br>
+                </div>
+                <div>
+                    <input type="text" id="purpose" placeholder="Purpose" required><br>
+                    <input type="number" id="price" placeholder="Price" required><br>
+                    <input type="number" id="stock" placeholder="Stock" required><br>
+                </div>
+            </form>
+            <div class="button-container">
+                <button type="submit" class="add-cta">Add Medicine</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- More Info Modal -->
+    <div id="moreInfoModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2 id="modalMedicineName">Medicine Name</h2>
             <p><strong>Manufacturer:</strong> <span id="modalManufacturer"></span></p>
             <p><strong>Purpose:</strong> <span id="modalPurpose"></span></p>
             <p><strong>Warnings:</strong> <span id="modalWarnings"></span></p>
-            <p><strong>Stop Use:</strong> <span id="modalStopUse"></span></p>
-            <p><strong>Storage and Handling:</strong> <span id="modalStorage"></span></p>
+            <p><strong>Stock:</strong> <span id="modalStock"></span></p>
         </div>
     </div>
 
