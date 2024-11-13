@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Cards</title>
     <link rel="stylesheet" href="mediciene.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div style="float: right;">
         <span id="userName">Hi, <strong><i>Sthita Pragyan Das</i></strong></span> <!-- Placeholder name -->
         <button id="logoutBtn" style="background-color: brown; color: white; border-radius: 4px; border-color: rgb(223, 235, 235); cursor: pointer; margin-bottom: 10px"><u>Logout</u></button>
     </div>
-    <div  style="margin-top: 50px;">
-        <h1>Pharmacy Management DashBoard</h1>
-      
-
+    <div style="margin-top: 50px;">
+        <h1>Pharmacy Management Dashboard</h1>
     </div>
 
     <!-- Search Bar -->
@@ -41,15 +40,16 @@
                         <input type="text" id="title" placeholder="Title" required><br>
                         <input type="text" id="manufacturers" placeholder="Manufacturers" required><br>
                         <input type="text" id="warning" placeholder="Warning" required><br>
+                        <input type="text" placeholder="Select Expiry Date" disabled><br>
                     </div>
                     <div>
                         <input type="text" id="purpose" placeholder="Purpose" required><br>
                         <input type="number" id="price" placeholder="Price" required><br>
                         <input type="number" id="stock" placeholder="Stock" required><br>
+                        <input type="date" id="expirydate" required><br>
                     </div>
-
                 </div>
-                <div class="button-container">
+                <div class="button-container" style="display: flex; justify-content: center; margin-top: 10px;">
                     <button type="submit" class="add-cta">Add Medicine</button>
                 </div>
             </form>
@@ -65,6 +65,18 @@
             <p><strong>Purpose:</strong> <span id="modalPurpose"></span></p>
             <p><strong>Warnings:</strong> <span id="modalWarnings"></span></p>
             <p><strong>Stock:</strong> <span id="modalStock"></span></p>
+            <p><strong>Expiry Date:</strong> <span id="modalexpiryDate"></span></p>
+        </div>
+    </div>
+
+    <!-- Quantity Modal -->
+    <div id="quantityModal" class="modal">
+        <div class="modal-content-stock">
+            <span class="close-quantity-modal-btn" onclick="document.getElementById('quantityModal').style.display = 'none';" style="background-color: rgb(201, 197, 197); padding: 2px 10px 1px 8px; border-radius: 50%; float: right; cursor: pointer;">&times;</span>
+
+            <h2>Enter Quantity</h2>
+            <input type="number" id="quantityInput" placeholder="Quantity" required>
+            <button id="confirmQuantityBtn">Confirm</button>
         </div>
     </div>
 

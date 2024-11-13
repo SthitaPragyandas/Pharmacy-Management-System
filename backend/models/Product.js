@@ -6,7 +6,8 @@ const productSchema = new mongoose.Schema({
     warning: { type: String, required: true },
     purpose: { type: String, required: true },
     price: { type: Number, required: true },
-    stock: { type: Number, required: true }
+    stock: { type: Number, required: true },
+    expiryDate:{type: Date, required: true}
 });
 
 const Product = mongoose.model('Product', productSchema);

@@ -79,3 +79,9 @@ button:hover {
     color: red;
     font-size: 14px;
 }
+.button-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Space between buttons */
+    margin-top: 0px; /* Space above buttons */
+}
