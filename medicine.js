@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const logoutBtn = document.getElementById('logoutBtn');
     var productID;
-    var errorMesg;
-    console.log(errorMesg);
+    var errorMesgID;
+   
     
 
     // Modals
@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Format the dates to yyyy-mm-dd to compare
         const todayFormatted = today.toISOString().split('T')[0];
         if(todayFormatted >= formattedDate){
-             document.getElementById("errorMessage").innerText="Mediciene is expired cant sell"
+            errorMesgID=productId
+           document.getElementById(productId).innerText="Mediciene is expired can't sell"
             }
         else{
             currentProductId = productId;
@@ -60,13 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to open the quantity modal
     function openQuantityModal(productId, operation,expDate) {
-        
-        document.getElementById("errorMessage").innerText=""
+        console.log(errorMesgID);
+        if(errorMesgID!=undefined &&errorMesgID!=productId ){
+              document.getElementById(errorMesgID).innerText=""
+
+        }
+        if(errorMesgID!=undefined &&errorMesgID==productId ){
+             document.getElementById(errorMesgID).innerText=""
+
+        }
+      
+       
         if(expDate){
             expDateCheck(productId, operation,expDate)
 
         }
         else{
+            
             currentProductId = productId;
             currentOperation = operation;
             productID=productId
@@ -166,6 +177,7 @@ function sell(productId,quantity) {
             const card = document.createElement('div');
             card.classList.add('medicine-card');
             card.setAttribute('data-name', medicine.title.toLowerCase());
+            
     
             card.innerHTML = `
 
@@ -178,7 +190,7 @@ function sell(productId,quantity) {
                         <img class="more-info-btn" src="/info.jpg" style="width: 40px; height: 40px;border-radius:50%;cursor: pointer;">
 
                 </p>
-                <p  id="errorMessage" style="color:red;margin-left:20px;margin-bottom:2px"></p>
+                <p  class="errorMesge" id=${medicine._id} style="color:red;margin-left:20px;margin-bottom:2px"></p>
 
 
                 
@@ -190,6 +202,7 @@ function sell(productId,quantity) {
             `;
     
             // Event listener for the More Info button
+        
             card.querySelector('.more-info-btn').addEventListener('click', () => openMoreInfoModal(medicine));
     
             // Event listener for the Add Stock button
@@ -218,7 +231,7 @@ function sell(productId,quantity) {
         modalPurpose.textContent = medicine.purpose;
         modalWarnings.textContent = medicine.warning;
         modalStock.textContent = medicine.stock;
-        modalexpiryDate.textContent=formattedDate=="NaN-NaN-NaN"?"Expiry Date is Not Added":formattedDate
+        modalexpiryDate.textContent=formattedDate=="NaN-NaN-NaN"?"Expiry Date has Not Added":formattedDate
 
         moreInfoModal.style.display = 'block';
     }
