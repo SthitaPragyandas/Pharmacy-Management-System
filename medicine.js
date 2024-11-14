@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const today = new Date();
         // Format the dates to yyyy-mm-dd to compare
         const todayFormatted = today.toISOString().split('T')[0];
-        if(todayFormatted==formattedDate){
+        if(todayFormatted >= formattedDate){
              document.getElementById("errorMessage").innerText="Mediciene is expired cant sell"
             }
         else{
@@ -210,12 +210,15 @@ function sell(productId,quantity) {
         const month = String(date.getMonth() + 1).padStart(2, '0'); // months are 0-indexed
         const day = String(date.getDate()).padStart(2, '0');
         const formattedDate = `${year}-${month}-${day}`;
+        console.log(formattedDate);
+        
+        
         modalMedicineName.textContent = medicine.title;
         modalManufacturer.textContent = medicine.manufacturers;
         modalPurpose.textContent = medicine.purpose;
         modalWarnings.textContent = medicine.warning;
         modalStock.textContent = medicine.stock;
-        modalexpiryDate.textContent=formattedDate
+        modalexpiryDate.textContent=formattedDate=="NaN-NaN-NaN"?"Expiry Date is Not Added":formattedDate
 
         moreInfoModal.style.display = 'block';
     }

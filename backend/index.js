@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const Product = require('./models/Product');
+//    connectTimeoutMS: 30000, // 30 seconds
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,10 +15,12 @@ app.use(cors({
 
 const akif='mongodb+srv://akifmohammed:CacuR2xie7ASJLze@cluster0.64mpu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const priya="mongodb+srv://pbrata13:JygjatW2NAY8HdOT@cluster0.6ndsa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const Rosalin="mongodb+srv://rojalindas323:rNzNocSUNDQNcFK3@cluster0.v800l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 // Connect to MongoDB (replace <username>, <password>, <dbname> with your details)
-mongoose.connect(akif, {
+mongoose.connect(Rosalin, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+
 }).then(() => console.log('Connected to MongoDB')).catch(err => console.error(err));
 
 // Start the server
